@@ -155,61 +155,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-#四元数插值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="四元数插值"><a href="#四元数插值" class="headerlink" title="四元数插值"></a>四元数插值</h1><p>球面线性插值(Spherical Linear Interpolation)，简称Slerp。能够保证每个四元数之间的角速度是固定的。如果两个四元数$q_0$和$q_1$之间的夹角为θ，那么：<br>$$<br>\theta_t = (1-t)\cdot0+t\theta<br>$$<br>有了$\theta$,就可以根据$\theta$，t，$q_0$,$q1$计算出插值后的四元数$q_t$.</p>
-<p>计算公式：</p>
-<p>$q_t = Slerp(q_0,q_1,t) = \frac{sin((1-t)\theta)}{sin(\theta)}q_0 +\frac{sin(t\theta)}{sin(\theta)}q_1 $</p>
-<p>$\theta = acos(q_0 \cdot q_1)$</p>
-<p>归一化线性插值（Normalized LinearInterpolation，简称Nlerp)<br>$$<br>q_t = Nlerp(q_0,q_1,t)=\frac{(1-t)q_0+tq_1}{\vline\vline(1-t)q_0+tq_1\vline\vline}<br>$$</p>
-<p>编程时需要注意的问题：</p>
-<p>1.若θ非常小，那么sin(θ)可能会由于浮点数的误差被近似为0.0，从而导致除以0的错误．所以，我们在实施 Slerp<br>之前，需要检查两个四元数的夹角是否过小（或者完全相同）。一旦发现这种问题，我们就必须改用 Nlerp 对两个四元数进行插值，这时候 Nlerp 的误差非常小，所以基本不会与真正的 Slerp 有什么区别。</p>
-<p>2.在对两个单位四元数进行插值之前，我们需要先检测q0与q1之间是否是钝角，即检测它们点积的结果q0⋅q1 是否为负数。如果 q0⋅q1&lt;0，那么我们就反转其中的一个四元数，比如说将q1改为−q1 ，并使用q0与−q1之间新的夹角来进行插值，这样才能保证插值的路径是最短的．</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/#四元数插值/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -292,7 +237,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/ hexo+github建博客/">sss</a>
+      <a class="article-title" href="/2019/08/29/ hexo+github建博客/">hexo + github pages搭建个人博客</a>
     </h1>
   
 
