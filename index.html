@@ -243,7 +243,7 @@
 <p>计算公式：</p>
 <p>$q_t = Slerp(q_0,q_1,t) = \frac{sin((1-t)\theta)}{sin(\theta)}q_0 +\frac{sin(t\theta)}{sin(\theta)}q_1 $</p>
 <p>$\theta = acos(q_0 \cdot q_1)$</p>
-<p>归一化线性插值（Normalized LinearInterpolation，简称Nlerp)<br>$$<br>q_t = Nlerp(q_0,q_1,t)=\frac{(1-t)q_0+tq_1}{\vline\vline(1-t)q_0+tq_1\vline\vline}<br>$$<br>编程时需要注意的问题：</p>
+<p>归一化线性插值（Normalized LinearInterpolation，简称Nlerp)<br>$$<br>q_t = Nlerp(q_0,q_1,t)=\frac{(1-t)q_0+tq_1}{||(1-t)q_0+tq_1||}<br>$$<br>编程时需要注意的问题：</p>
 <p>1.若θ非常小，那么sin(θ)可能会由于浮点数的误差被近似为0.0，从而导致除以0的错误．所以，我们在实施 Slerp<br>之前，需要检查两个四元数的夹角是否过小（或者完全相同）。一旦发现这种问题，我们就必须改用 Nlerp 对两个四元数进行插值，这时候 Nlerp 的误差非常小，所以基本不会与真正的 Slerp 有什么区别。</p>
 <p>2.在对两个单位四元数进行插值之前，我们需要先检测q0与q1之间是否是钝角，即检测它们点积的结果q0⋅q1 是否为负数。如果 q0⋅q1&lt;0，那么我们就反转其中的一个四元数，比如说将q1改为−q1 ，并使用q0与−q1之间新的夹角来进行插值，这样才能保证插值的路径是最短的．</p>
 
