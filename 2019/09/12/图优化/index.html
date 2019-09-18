@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | my blog</title>
+  <title>图优化 | my blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="于化冰的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="my blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="图优化优化图优化的本质是一个优化问题 优化问题的三个重要因素：目标函数、优化变量、优化约束$$\mathop{min}_{x} F(x)$$slam中通常为无约束的非线性优化，如果知道梯度的解析形式，就能直接求那些梯度为零的点，来解决这个优化：$$\frac{dF}{dx}=0$$梯度为零的地方可能是函数的极大值、极小值或者鞍点。由于现在𝐹(𝑥)的形式不确定，我们只好遍历所有的极值点，找到最小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图优化">
+<meta property="og:url" content="http://yoursite.com/2019/09/12/图优化/index.html">
 <meta property="og:site_name" content="my blog">
-<meta property="og:description" content="于化冰的博客">
+<meta property="og:description" content="图优化优化图优化的本质是一个优化问题 优化问题的三个重要因素：目标函数、优化变量、优化约束$$\mathop{min}_{x} F(x)$$slam中通常为无约束的非线性优化，如果知道梯度的解析形式，就能直接求那些梯度为零的点，来解决这个优化：$$\frac{dF}{dx}=0$$梯度为零的地方可能是函数的极大值、极小值或者鞍点。由于现在𝐹(𝑥)的形式不确定，我们只好遍历所有的极值点，找到最小">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-18T09:14:05.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="my blog">
-<meta name="twitter:description" content="于化冰的博客">
+<meta name="twitter:title" content="图优化">
+<meta name="twitter:description" content="图优化优化图优化的本质是一个优化问题 优化问题的三个重要因素：目标函数、优化变量、优化约束$$\mathop{min}_{x} F(x)$$slam中通常为无约束的非线性优化，如果知道梯度的解析形式，就能直接求那些梯度为零的点，来解决这个优化：$$\frac{dF}{dx}=0$$梯度为零的地方可能是函数的极大值、极小值或者鞍点。由于现在𝐹(𝑥)的形式不确定，我们只好遍历所有的极值点，找到最小">
   
     <link rel="alternative" href="/atom.xml" title="my blog" type="application/atom+xml">
   
@@ -153,238 +154,205 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-图优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/17/闵卫/" class="archive-article-date">
-  	<time datetime="2019-09-17T09:10:36.732Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/闵卫/">C++学习笔记</a>
+    <h1 class="article-title" itemprop="name">
+      图优化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/12/图优化/" class="archive-article-date">
+        
+        <a href="/2019/09/12/图优化/" class="archive-article-date">
   	<time datetime="2019-09-11T16:46:27.484Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/12/图优化/">图优化</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="图优化"><a href="#图优化" class="headerlink" title="图优化"></a>图优化</h1><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>图优化的本质是一个优化问题</p>
+<p>优化问题的三个重要因素：目标函数、优化变量、优化约束<br>$$<br>\mathop{min}_{x} F(x)<br>$$<br>slam中通常为无约束的非线性优化，如果知道梯度的解析形式，就能直接求那些梯度为零的点，来解决这个优化：<br>$$<br>\frac{dF}{dx}=0<br>$$<br>梯度为零的地方可能是函数的极大值、极小值或者鞍点。由于现在<em>𝐹</em>(<em>𝑥</em>)的形式不确定，我们只好遍历所有的极值点，找到最小的作为最优解。</p>
+<p>但是很多时候F(x)的形式太复杂，没法写出导数的解析形式，或者难以求解导数为零的方程。因此使用迭代的方式进行求解。从一个初值$$x_0$$出发,不断地在当前值附近往能使目标函数下降的方向走，从而使函数值下降一点，这样反复迭代。</p>
+<p>迭代策略主要体现在两个方面：1.如何选择下降方向。2.如何选择步长</p>
+<p>迭代主要的方法：Gauss-Newton （GN）法和 Levenberg-Marquardt （LM）法。</p>
+<h2 id="图优化-1"><a href="#图优化-1" class="headerlink" title="图优化"></a>图优化</h2><p>图优化就是把一个常规的优化问题，用图的形式来表述。</p>
+<p>图：G = {V,E}</p>
+<p>边有无方向对应的图称为有向图和无向图</p>
+<p>当一个图中存在连接两个以上顶点的边时，称这个图为超图（Hyper Graph）。而SLAM问题就可以表示成一个超图</p>
+<h3 id="怎么把SLAM问题表示成图？"><a href="#怎么把SLAM问题表示成图？" class="headerlink" title="怎么把SLAM问题表示成图？"></a>怎么把SLAM问题表示成图？</h3><p>假设在k时刻，机器人在$$x_k$$处，用传感器进行一次观测，就得到了数据$$z_k$$,传感器的观测方程为：<br>$$<br>z_k = h(x_k)<br>$$<br>由于误差的存在，$$z_k$$不可能精确地等于$$h(x_k)$$,于是就有了误差：<br>$$<br>e_k = z_k - h(x_k)<br>$$<br>那么以$$x_k$$为优化变量，以$$\mathop{min}_{x} F_k(x_k) = ||e_k||$$为目标函数，就可以求得$$x_k$$的估计值。</p>
+<h3 id="优化变量-x-k-观测方程-z-k-h-x-k-等的参数化："><a href="#优化变量-x-k-观测方程-z-k-h-x-k-等的参数化：" class="headerlink" title="优化变量$$x_k$$,观测方程$$z_k = h(x_k)$$ 等的参数化："></a>优化变量$$x_k$$,观测方程$$z_k = h(x_k)$$ 等的参数化：</h3><p>$$x_k$$可以是一个机器人的Pose（6自由度下为 4×4的变换矩阵<strong>𝐓</strong> 或者 3自由度下的位置与转角[<em>𝑥</em>,<em>𝑦</em>,<em>𝜃<em>]，也可以是一个空间点（三维空间的[</em>𝑥</em>,<em>𝑦</em>,<em>𝑧<em>]或二维空间的[</em>𝑥</em>,<em>𝑦</em>]）。</p>
+<p>观测方程也有很多形式，如：</p>
+<ul>
+<li>机器人两个Pose之间的变换；</li>
+<li>机器人在某个Pose处用激光测量到了某个空间点，得到了它离自己的距离与角度；</li>
+<li>机器人在某个Pose处用相机观测到了某个空间点，得到了它的像素坐标；</li>
+</ul>
+<p>　　同样，它们的具体形式很多样化，这允许我们在讨论slam问题时，不局限于某种特定的传感器或姿态表达方式。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/yuhuabing/yuhuabing.github.io/master/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/yuhuabing/yuhuabing.github.io/master/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/12/图优化/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/11/多相机论文/" class="archive-article-date">
-  	<time datetime="2019-09-10T16:27:52.005Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/09/17/闵卫/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/11/多相机论文/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多相机论文</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/11/多相机论文/">多相机论文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图优化"><span class="toc-number">1.</span> <span class="toc-text">图优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#优化"><span class="toc-number">1.1.</span> <span class="toc-text">优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图优化-1"><span class="toc-number">1.2.</span> <span class="toc-text">图优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么把SLAM问题表示成图？"><span class="toc-number">1.2.1.</span> <span class="toc-text">怎么把SLAM问题表示成图？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化变量-x-k-观测方程-z-k-h-x-k-等的参数化："><span class="toc-number">1.2.2.</span> <span class="toc-text">优化变量$$x_k$$,观测方程$$z_k = h(x_k)$$ 等的参数化：</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/30/解决github频繁要求帐号密码的问题/" class="archive-article-date">
-  	<time datetime="2019-08-29T20:32:55.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/30/解决github频繁要求帐号密码的问题/">解决github频繁要求帐号密码的问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/29/四元数插值/" class="archive-article-date">
-  	<time datetime="2019-08-29T09:08:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/29/四元数插值/">四元数插值</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-08-28T22:37:06.853Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/29/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/29/ hexo+github建博客/" class="archive-article-date">
-  	<time datetime="2019-08-28T16:48:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/29/ hexo+github建博客/">hexo + github pages搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/01/单帧图像重定位/" class="archive-article-date">
-  	<time datetime="2019-08-01T15:43:06.443Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/01/单帧图像重定位/">VINS重定位</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -407,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

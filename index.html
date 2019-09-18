@@ -236,6 +236,159 @@
 
 
   
+    <article id="post-图优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/12/图优化/">图优化</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/12/图优化/" class="archive-article-date">
+  	<time datetime="2019-09-11T16:46:27.484Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="图优化"><a href="#图优化" class="headerlink" title="图优化"></a>图优化</h1><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>图优化的本质是一个优化问题</p>
+<p>优化问题的三个重要因素：目标函数、优化变量、优化约束<br>$$<br>\mathop{min}_{x} F(x)<br>$$<br>slam中通常为无约束的非线性优化，如果知道梯度的解析形式，就能直接求那些梯度为零的点，来解决这个优化：<br>$$<br>\frac{dF}{dx}=0<br>$$<br>梯度为零的地方可能是函数的极大值、极小值或者鞍点。由于现在<em>𝐹</em>(<em>𝑥</em>)的形式不确定，我们只好遍历所有的极值点，找到最小的作为最优解。</p>
+<p>但是很多时候F(x)的形式太复杂，没法写出导数的解析形式，或者难以求解导数为零的方程。因此使用迭代的方式进行求解。从一个初值$$x_0$$出发,不断地在当前值附近往能使目标函数下降的方向走，从而使函数值下降一点，这样反复迭代。</p>
+<p>迭代策略主要体现在两个方面：1.如何选择下降方向。2.如何选择步长</p>
+<p>迭代主要的方法：Gauss-Newton （GN）法和 Levenberg-Marquardt （LM）法。</p>
+<h2 id="图优化-1"><a href="#图优化-1" class="headerlink" title="图优化"></a>图优化</h2><p>图优化就是把一个常规的优化问题，用图的形式来表述。</p>
+<p>图：G = {V,E}</p>
+<p>边有无方向对应的图称为有向图和无向图</p>
+<p>当一个图中存在连接两个以上顶点的边时，称这个图为超图（Hyper Graph）。而SLAM问题就可以表示成一个超图</p>
+<h3 id="怎么把SLAM问题表示成图？"><a href="#怎么把SLAM问题表示成图？" class="headerlink" title="怎么把SLAM问题表示成图？"></a>怎么把SLAM问题表示成图？</h3><p>假设在k时刻，机器人在$$x_k$$处，用传感器进行一次观测，就得到了数据$$z_k$$,传感器的观测方程为：<br>$$<br>z_k = h(x_k)<br>$$<br>由于误差的存在，$$z_k$$不可能精确地等于$$h(x_k)$$,于是就有了误差：<br>$$<br>e_k = z_k - h(x_k)<br>$$<br>那么以$$x_k$$为优化变量，以$$\mathop{min}_{x} F_k(x_k) = ||e_k||$$为目标函数，就可以求得$$x_k$$的估计值。</p>
+<h3 id="优化变量-x-k-观测方程-z-k-h-x-k-等的参数化："><a href="#优化变量-x-k-观测方程-z-k-h-x-k-等的参数化：" class="headerlink" title="优化变量$$x_k$$,观测方程$$z_k = h(x_k)$$ 等的参数化："></a>优化变量$$x_k$$,观测方程$$z_k = h(x_k)$$ 等的参数化：</h3><p>$$x_k$$可以是一个机器人的Pose（6自由度下为 4×4的变换矩阵<strong>𝐓</strong> 或者 3自由度下的位置与转角[<em>𝑥</em>,<em>𝑦</em>,<em>𝜃<em>]，也可以是一个空间点（三维空间的[</em>𝑥</em>,<em>𝑦</em>,<em>𝑧<em>]或二维空间的[</em>𝑥</em>,<em>𝑦</em>]）。</p>
+<p>观测方程也有很多形式，如：</p>
+<ul>
+<li>机器人两个Pose之间的变换；</li>
+<li>机器人在某个Pose处用激光测量到了某个空间点，得到了它离自己的距离与角度；</li>
+<li>机器人在某个Pose处用相机观测到了某个空间点，得到了它的像素坐标；</li>
+</ul>
+<p>　　同样，它们的具体形式很多样化，这允许我们在讨论slam问题时，不局限于某种特定的传感器或姿态表达方式。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/12/图优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-多相机论文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/11/多相机论文/">多相机论文</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/11/多相机论文/" class="archive-article-date">
+  	<time datetime="2019-09-10T16:27:52.005Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.SLAM-based automatic extrinsic calibration of a multi-camera rig  2011</p>
+<p>宽视野的相机对快速准确的导航/SLAM/重定位来说是必要的。虽然可以通过一个全景相机来提供，也可以通过多个标准透镜的相机来灵活地实现，只是标定是一个问题。论文提供一个通用的方法对固定的多相机装置全自动外参标定昂发，不需要标定模式和其他设备，在相机间没有共识区域时也能工作。机器人捕捉各个相机同步的图像序列，这些图像序列通过单目VSLAM算法单独处理。生成的地图基于相应的不变特征进行匹配融合，然后用BA优化所有的估计，假设相机的相对位姿是固定的。</p>
+<p>2.Autonomous Robots manuscript No.(will be inserted by the editor)Self-Calibration and Visual SLAM with a Multi-Camera System on aMicro Aerial Vehicle</p>
+<p>多相机系统的使用使机器人获得环绕视野，因此最大化它的环境感知能力。多相机SLAM系统的多相机标定是必要条件。论文提出了基于VSLAM的多相机的自我标定方法，需要一个双目相机和任意数量的单目相机，假设共视区域只在双目相机存在。这个方法估计了具有尺度的相机间的变换，尺度是从双目相机获得的。相机标定好后，系统能够估计功过多相机VSLAM系统估计全局位姿，提出最小和线性3点法，使用3轴陀螺仪相对旋转角度测量，2D特征匹配恢复具有尺度的相对运动</p>
+<p>3.MULTICOL-SLAM - A MODULAR REAL-TIME MULTI-CAMERA SLAM SYSTEM</p>
+<p>扩展和提高最先进的SLAM系统使其能够适用于任意，刚性耦合的多相机SLAM系统</p>
+<p>state-of-art</p>
+<p>近年来大部分是基于关键帧的SLAM系统。第一个实时基于关键帧的局部BA和全局BA的系统是PTAM。成功的关键是把跟踪和建图分成两个线程并行在双核CPU上运行。建图线程决定哪个相机位姿保存成关键帧并且与跟踪线程同步进行局部和全局BA。然后以图像的·频率进行地图点的匹配和相机的位姿估计。后来PTAM通过加入边特征改进，随着计算性能的增加，在移动平台上实现。但是把图像快作为特征和缺少闭环机制，使它保存/更新/图像快的编号 代价很高。另外全局BA在整个场景进行，限制了它只能在小的工作区域内工作。</p>
+<p>4.CoSLAM: Collaborative Visual SLAM inDynamic Environments</p>
+<p>用多相机来解决VSLAM的动态场景的问题。可以安放在不同的平台上。所有的相机一起工作建立全局地图，包括静态背景点和轨迹。引入inter-camera位姿估计和建图来应对动态对象。为了增强鲁棒性，维持地图点的位置不确定性。根据视野重叠程度把相机聚类，并实时管理它们的分离与合并。</p>
+<p>5.Multi-camera visual SLAM for autonomous navigation of micro aerial vehicles</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/11/多相机论文/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-解决github频繁要求帐号密码的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -504,6 +657,69 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/29/ hexo+github建博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-单帧图像重定位" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/01/单帧图像重定位/">VINS重定位</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/01/单帧图像重定位/" class="archive-article-date">
+  	<time datetime="2019-08-01T15:43:06.443Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>VINS<br>1.保存数据库 db   添加：add，每一帧的描述子 vec_cvmat 保存：save  -&gt; 123.bin<br>2.保存地图  ORB特征点以及ORB描述子(用于闭环检测)  光流点和对应的3D点和ORB描述子（用于匹配解算）<br>relo<br>1.找到闭环帧  加载db   当前帧提取ORB特征点计算ORB描述子（用于闭环检测） query函数找到闭环帧<br>当前帧提取FAST点，计算ORB描述子（用于匹配和解算）<br>2.匹配 描述子匹配<br>3.解算</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/01/单帧图像重定位/">展开全文 >></a>
         </p>
       
 
